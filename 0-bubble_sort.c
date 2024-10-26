@@ -18,14 +18,11 @@ void bubble_sort(int *array, size_t size)
 	bool isSorted = false;
 	bool isSwappable;
 	bool beingTracked;
-	int count = 0;
 
 	if (size < 2)
 		return;
-
 	while (isSorted == false)
 	{
-		count++;
 		isSwappable = false;
 		beingTracked = false;
 
@@ -55,10 +52,7 @@ void bubble_sort(int *array, size_t size)
 			else
 				beingTracked = false;
 		}
-
 		if (isSwappable == false)
-		{
 			isSorted = true;
-		}
 	}
 }
