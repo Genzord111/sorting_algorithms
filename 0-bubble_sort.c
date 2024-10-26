@@ -11,46 +11,26 @@
 
 void bubble_sort(int *array, size_t size)
 {
-	unsigned long int current_index = 0;
-	unsigned long int next_index;
-	int temp;
-	int indexTracked = 0;
-	bool isSorted = false;
+    size_t i;
+    int temp;
+    bool swapped = true;
 
-	if (size < 2)
-		return;
-	while (isSorted == false)
-	{
-		bool isSwappable = false;
-		bool beingTracked = false;
+    if (size < 2)
+        return;
 
-		for (current_index = 0; current_index < size - 1; current_index++)
-		{
-			next_index = current_index + 1;
-			if (array[current_index] > array[next_index])
-			{
-				indexTracked = current_index;
-				isSwappable = true;
-				beingTracked = true;
-				break;
-			}
-		}
-
-		while (beingTracked == true)
-		{
-			next_index = indexTracked + 1;
-			if (next_index < size && array[indexTracked] > array[next_index])
-			{
-				temp = array[indexTracked];
-				array[indexTracked] = array[next_index];
-				array[next_index] = temp;
-				print_array(array, size);
-				indexTracked++;
-			}
-			else
-				beingTracked = false;
-		}
-		if (isSwappable == false)
-			isSorted = true;
-	}
+    while (swapped)
+    {
+        swapped = false;
+        for (i = 0; i < size - 1; i++)
+        {
+            if (array[i] > array[i + 1])
+            {
+                temp = array[i];
+                array[i] = array[i + 1];
+                array[i + 1] = temp;
+                print_array(array, size);
+                swapped = true;
+            }
+        }
+    }
 }
