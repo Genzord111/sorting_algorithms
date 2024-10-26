@@ -16,15 +16,13 @@ void bubble_sort(int *array, size_t size)
 	int temp;
 	int indexTracked = 0;
 	bool isSorted = false;
-	bool isSwappable;
-	bool beingTracked;
 
 	if (size < 2)
 		return;
 	while (isSorted == false)
 	{
-		isSwappable = false;
-		beingTracked = false;
+		bool isSwappable = false;
+		bool beingTracked = false;
 
 		for (current_index = 0; current_index < size - 1; current_index++)
 		{
