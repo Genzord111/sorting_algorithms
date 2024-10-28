@@ -31,10 +31,7 @@ void insertion_sort_list(listint_t **list)
 
                     if (Node2->prev != NULL)
                         Node2->prev->next = Node1;
-
-                    if (Node2->prev != NULL)
-                        Node2->prev->next;
-                    else
+		    else
                         *list = Node1;
 
                     Node1->prev = Node2->prev;
