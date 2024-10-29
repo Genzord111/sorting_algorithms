@@ -40,10 +40,8 @@ void insertion_sort_list(listint_t **list)
                     if (Node1->next != NULL)
                         Node1->next->prev = Node2;
 
-
                     Node1->next = Node2;
                     Node2->prev = Node1;
-
 
                     print_list(*list);
                 }
